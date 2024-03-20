@@ -2,7 +2,13 @@
 
 :root {
     --font-size: 30px;
-    --font-size-h1: calc(var(--font-size) * 2.3);
+
+    --header-font-size: calc(var(--font-size) * 1);
+
+    --intro-font-size: calc(var(--font-size) * 1.5);
+
+    --footer-p: calc(var(--font-size) * 0.9);
+
     --color: blue;
 
     --gutter: calc(var(--font-size) * 1.5);
@@ -15,21 +21,51 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     font-family: 'Archivo', sans-serif;
-    font-size: var(--font-size);
-    padding-bottom: calc(var(--gutter) * 3);
     padding-left: calc(var(--gutter) * 2);
     padding-right: var(--gutter);
+}
+
+header {
+    padding-top: calc(var(--header-font-size) * 1);
+}
+
+header p {
+    font-size: var(--header-font-size);
+}
+
+main {
+    display: flex;
+    padding-bottom: calc(var(--gutter) * 3);
     padding-top: calc(var(--gutter) * 3);
     row-gap: var(--gutter);
 }
 
-h1 {
-    font-size: var(--font-size-h1);
+.intro {
+    width: 50%;
+}
+
+.intro p {
+    font-size: var(--intro-font-size);
+    padding-bottom: var(--gutter);
+}
+
+ol {
+    width: 50%;
+    margin-left: var(--gutter);
+    margin-left: calc(var(--gutter) * 2);
 }
 
 li {
     padding-bottom: calc(var(--gutter) * 0.2);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: calc(var(--header-font-size) * 1);
+}
+
+footer p {
+    font-size: var(--footer-p);
 }
