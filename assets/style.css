@@ -33,6 +33,7 @@ header {
     justify-content: space-between;
     position: relative;
     padding-top: calc(var(--header-p) * 1);
+    width: 100%;
 }
 
 header p {
