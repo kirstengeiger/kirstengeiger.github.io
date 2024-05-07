@@ -9,48 +9,10 @@
 /* font-family: "IBM Plex Mono", monospace; */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Jersey+10&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap');
 
-/* @media (min-width:600px) {
-    :root {
-        font-size: 32px;
-    }
-} */
 
 body {
     background-color: #F2F1EC;
 }
-
-/* .hello {
-    text-transform: uppercase;
-    background-color: #0CAE5A;
-} */
-
-/* .hello h1 {
-    font-family: "IBM Plex Mono", monospace;
-    background-color: #0CAE5A;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    padding-left: calc(var(--gutter) * 2);
-    padding-right: calc(var(--gutter) * 2);
-    font-size: 20px;
-    overflow: hidden;
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    animation:  
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
-    animation-fill-mode: forwards;
-} */
-
-/* @keyframes typing {
-    from { width: 0; } 
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black; }
-} */
 
 .intro p,
 h2,
@@ -69,11 +31,11 @@ h2,
     padding-top: calc(var(--gutter) * 1.2);
     padding-bottom: calc(var(--gutter) * 1.2);
     padding-left: calc(var(--gutter) * 2);
+    padding-right: calc(var(--gutter) * 2);
 }
 
 .intro p {
     font-size: var(--type-p);
-    width: 45vw;
 }
 
 .intro p:not(:last-child){
@@ -96,8 +58,6 @@ h2,
 
 li {
     background-color: #F2F1EC;
-    display: flex;
-    align-items: center;
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     padding-left: calc(var(--gutter) * 2);
@@ -117,12 +77,10 @@ h2 {
 
 .name {
     display: flex;
-    align-items: center;
 }
 
 .title {
     font-size: var(--title-p);
-    padding-left: var(--gutter);
 }
 
 .tags {
@@ -133,7 +91,6 @@ h2 {
 .tags p {
     font-family: "IBM Plex Mono", monospace;
     font-size: var(--footer-p);
-    margin-left: var(--gutter);
     background-color: white;
     padding-top: calc(var(--gutter) * 0.2);
     padding-bottom: calc(var(--gutter) * 0.2);
@@ -141,6 +98,10 @@ h2 {
     padding-right: calc(var(--gutter) * 0.8);
     border-radius: 30px;
     /* border: 1px black solid; */
+}
+
+.tags p:not(:first-child) {
+    margin-left: var(--gutter);
 }
 
 li:hover {
@@ -168,6 +129,45 @@ footer p {
     text-transform: uppercase;
 }
 
+@media (min-width:600px) {
+    :root {
+        --type-p: 40px;
+        --h2-p: calc(var(--type-p) * 1);
+        --title-p: calc(var(--type-p) * 1.5);
+        --header-p: calc(var(--font-size) * 1);
+        --intro-p: calc(var(--font-size) * 1.5);
+        --li-p: calc(var(--font-size) * 1);
+        --li-padding: calc(var(--title-p) * 0.5);
+        --footer-p: calc(var(--type-p) * 1.5);
+        --footer-p: calc(var(--font-size) * 3);
+        --gutter: calc(var(--type-p) * 1);
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name {
+        display: flex;
+        /* flex-direction: column; */
+        align-items: flex-start;
+    }
+
+    .title {
+        padding-left: var(--gutter);
+    }
+
+    .tags {
+        margin-left: calc(var(--gutter) * 2);
+    }
+
+    .name h2,
+    .tags {
+        padding-top: calc(var(--gutter) * 0.5);
+    }
+}
+
 @media (min-width:1200px) {
     :root {
         --type-p: 18px;
@@ -181,20 +181,35 @@ footer p {
         --footer-p: calc(var(--font-size) * 0.9);
         --gutter: calc(var(--type-p) * 1.5);
     }
-}
 
-@media (min-width:600px) {
-    :root {
-        --type-p: 18px;
-        --h2-p: calc(var(--type-p) * 1);
-        --title-p: calc(var(--type-p) * 2);
-        --header-p: calc(var(--font-size) * 1);
-        --intro-p: calc(var(--font-size) * 1.5);
-        --li-p: calc(var(--font-size) * 1);
-        --li-padding: calc(var(--title-p) * 0.5);
-        --footer-p: calc(var(--type-p) * 0.5);
-        --footer-p: calc(var(--font-size) * 0.9);
-        --gutter: calc(var(--type-p) * 1.5);
+    .intro p {
+        width: 40vw;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .title {
+        padding-left: var(--gutter);
+    }
+
+    .tags {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .name h2,
+    .tags {
+        padding-top: 0;
     }
 }
 
