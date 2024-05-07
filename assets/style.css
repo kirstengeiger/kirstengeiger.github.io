@@ -91,12 +91,12 @@ h2 {
 .tags p {
     font-family: "IBM Plex Mono", monospace;
     font-size: var(--footer-p);
-    background-color: white;
-    padding-top: calc(var(--gutter) * 0.2);
+    /* background-color: white; */
+    /* padding-top: calc(var(--gutter) * 0.2);
     padding-bottom: calc(var(--gutter) * 0.2);
     padding-left: calc(var(--gutter) * 0.8);
-    padding-right: calc(var(--gutter) * 0.8);
-    border-radius: 30px;
+    padding-right: calc(var(--gutter) * 0.8); */
+    /* border-radius: 30px; */
     /* border: 1px black solid; */
 }
 
