@@ -118,7 +118,9 @@ li {
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     padding-left: calc(var(--gutter) * 2);
+    padding-right: calc(var(--gutter) * 2);
     border-top: solid 1.5px black;
+    justify-content: space-between;
 }
 
 ol a:last-child li {
@@ -130,9 +132,32 @@ h2 {
     /* color: #0CAE5A; */
 }
 
+.name {
+    display: flex;
+    align-items: center;
+}
+
 .title {
     font-size: var(--title-p);
     padding-left: var(--gutter);
+}
+
+.tags {
+    display: flex;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.tags p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: var(--footer-p);
+    margin-left: var(--gutter);
+    background-color: white;
+    padding-top: calc(var(--gutter) * 0.2);
+    padding-bottom: calc(var(--gutter) * 0.2);
+    padding-left: calc(var(--gutter) * 0.8);
+    padding-right: calc(var(--gutter) * 0.8);
+    border-radius: 30px;
+    /* border: 1px black solid; */
 }
 
 li:hover {
