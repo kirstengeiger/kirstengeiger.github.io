@@ -17,6 +17,7 @@
     --intro-p: calc(var(--font-size) * 1.5);
     --li-p: calc(var(--font-size) * 1);
     --li-padding: calc(var(--title-p) * 0.5);
+    --footer-p: calc(var(--type-p) * 0.5);
 
     --footer-p: calc(var(--font-size) * 0.9);
 
@@ -42,11 +43,11 @@ body {
 
 .hello h1 {
     font-family: "IBM Plex Mono", monospace;
-    background-color: #0CAE5A;
-    padding-top: var(--gutter);
+    /* background-color: #0CAE5A; */
+    /* padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     padding-left: calc(var(--gutter) * 2);
-    padding-right: calc(var(--gutter) * 2);
+    padding-right: calc(var(--gutter) * 2); */
     font-size: 20px;
     overflow: hidden;
     margin: 0 auto;
@@ -82,30 +83,32 @@ h2,
 }
 
 .intro {
-    width: 50vw;
+    padding-top: calc(var(--gutter) * 1.2);
+    padding-bottom: calc(var(--gutter) * 1.2);
+    padding-left: calc(var(--gutter) * 2);
 }
 
 .intro p {
     font-size: var(--type-p);
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    padding-left: calc(var(--gutter) * 2);
     width: 45vw;
+}
+
+.intro p:not(:last-child){
+    padding-bottom: var(--type-p);
 }
 
 .links {
     font-family: "IBM Plex Mono", monospace;
     text-transform: uppercase;
     display: flex;
-    flex-direction: column;
-    align-items: left;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    padding-right: calc(var(--gutter) * 2);
+    /* flex-direction: column; */
+    /* padding-top: var(--gutter);
+    padding-bottom: var(--gutter); */
 }
 
 .links p {
-    padding-bottom: calc(0.3 var(--gutter));
+    padding-left: var(--gutter);
+    /* padding-bottom: calc(var(--type-p) * 0.5); */
 }
 
 li {
@@ -118,9 +121,13 @@ li {
     border-top: solid 1.5px black;
 }
 
+ol a:last-child li {
+    border-bottom: solid 1.5px black;
+}
+
 h2 {
     font-size: var(--h2-p);
-    color: #0CAE5A;
+    /* color: #0CAE5A; */
 }
 
 .title {
@@ -129,5 +136,26 @@ h2 {
 }
 
 li:hover {
-    background-color: FFED94;
+    background-color: #FFED94;
+}
+
+footer {
+    background-color: #0CAE5A;
+    align-items: space-between;
+    padding-top: calc(var(--gutter) * 0.5);
+    padding-bottom: calc(var(--gutter) * 0.5);
+    padding-left: calc(var(--gutter) * 2);
+    padding-right: calc(var(--gutter) * 2);
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
+    /* border-top: solid 1.5px black; */
+}
+
+footer p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: var(--footer-p);
+    text-transform: uppercase;
 }
