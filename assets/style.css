@@ -27,7 +27,7 @@ h2,
     justify-content: space-between;
 }
 
-.intro, .links {
+.intro {
     padding-top: calc(var(--gutter) * 1.2);
     padding-bottom: calc(var(--gutter) * 1.2);
     padding-left: calc(var(--gutter) * 2);
@@ -36,6 +36,15 @@ h2,
 
 .intro p {
     font-size: var(--type-p);
+    white-space: nowrap; 
+    overflow: hidden; 
+    animation: scrollText 20s linear infinite; 
+    text-transform: uppercase;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); } 
 }
 
 .intro p:not(:last-child){
@@ -83,20 +92,6 @@ h2 {
     font-size: var(--title-p);
 }
 
-.tags {
-    display: flex;
-    font-family: "IBM Plex Mono", monospace;
-}
-
-.tags p {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: var(--footer-p);
-}
-
-.tags p:not(:first-child) {
-    margin-left: var(--gutter);
-}
-
 li:hover {
     background-color: #FFED94;
 }
@@ -104,11 +99,12 @@ li:hover {
 footer {
     background-color: #0CAE5A;
     align-items: space-between;
-    padding-top: calc(var(--gutter) * 0.5);
-    padding-bottom: calc(var(--gutter) * 0.5);
+    padding-top: calc(var(--gutter) * 1);
+    padding-bottom: calc(var(--gutter) * 1);
     padding-left: calc(var(--gutter) * 2);
     padding-right: calc(var(--gutter) * 2);
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     bottom: 0;
     position: fixed;
@@ -122,6 +118,10 @@ footer p {
     text-transform: uppercase;
 }
 
+.links p:hover {
+    text-decoration: underline;
+}
+
 @media (min-width:600px) {
     :root {
         --type-p: 40px;
@@ -132,13 +132,14 @@ footer p {
         --li-p: calc(var(--font-size) * 1);
         --li-padding: calc(var(--title-p) * 0.5);
         --footer-p: calc(var(--type-p) * 1.5);
-        --footer-p: calc(var(--font-size) * 3);
+        --footer-p: 30px;
         --gutter: calc(var(--type-p) * 1);
     }
 
     li {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
     }
 
     .name {
@@ -163,7 +164,7 @@ footer p {
 
 @media (min-width:1200px) {
     :root {
-        --type-p: 18px;
+        --type-p: 19px;
         --h2-p: calc(var(--type-p) * 1);
         --title-p: calc(var(--type-p) * 2);
         --header-p: calc(var(--font-size) * 1);
@@ -173,10 +174,6 @@ footer p {
         --footer-p: calc(var(--type-p) * 0.5);
         --footer-p: calc(var(--font-size) * 0.9);
         --gutter: calc(var(--type-p) * 1.5);
-    }
-
-    .intro p {
-        width: 40vw;
     }
 
     li {
